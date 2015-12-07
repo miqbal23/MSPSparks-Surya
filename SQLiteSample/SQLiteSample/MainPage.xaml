@@ -1,0 +1,51 @@
+﻿<Page
+    x:Class="SQLiteSample.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SQLiteSample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.Content>
+                <Grid/>
+            </CommandBar.Content>
+            <AppBarButton x:Name="refreshButton" Icon="RepeatAll" Label="refresh" Click="refreshButton_Click"/>
+        </CommandBar>
+    </Page.BottomAppBar>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="MSP Bodeta" Grid.ColumnSpan="3" HorizontalAlignment="Center" FontSize="64"/>
+
+        <ListView x:Name="nameListView" Grid.Row="1" Grid.Column="0" Header="Nama :">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <TextBlock FontSize="25" Text="{Binding Name}"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ListView x:Name="campusListView" Grid.Row="1" Grid.Column="1" Header="Kampus :">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <TextBlock FontSize="25" Text="{Binding Campus}"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <TextBox x:Name="campusTxtBox" Grid.Column="1" HorizontalAlignment="Left" Margin="24,132,0,20" TextWrapping="Wrap" VerticalAlignment="Top" PlaceholderText="Type your campus name here" Width="280"/>
+        <TextBox x:Name="nameTxtBox" HorizontalAlignment="Left" Margin="24,132,0,20" TextWrapping="Wrap" Width="237" PlaceholderText="Type your name here"/>
+        <Button x:Name="button" Content="Add Data" Grid.Column="1" HorizontalAlignment="Left" Margin="381,132,0,0" VerticalAlignment="Top" Click="button_Click"/>
+    </Grid>
+</Page>
