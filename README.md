@@ -1,2 +1,6 @@
 # MSPSparks-Surya
-Repo untuk semua file solution Visual Studio 2015 dari workshop MSP Sparks Surya University
+Repository ini adalah hasil dari workshop MSP Spark di Surya University
+
+Konten : 
+
+1. FirstApp
